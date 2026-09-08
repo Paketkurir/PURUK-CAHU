@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPX Express Puruk Cahu — Lebih Cepat, Lebih Dekat Untuk Anda</title>
+    <meta name="description" content="SPX Express Puruk Cahu — Layanan pengiriman paket dalam & luar negeri, jemput paket GRATIS, cek & lacak paket. Hubungi WA: 0818789553">
+    <meta name="keywords" content="SPX Express, Puruk Cahu, pengiriman paket, ekspedisi, Kalimantan Tengah, kurir, lacak paket">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://puruk-cahu.vercel.app/">
+    
+    <!-- Open Graph / Sosmed -->
+    <meta property="og:title" content="SPX Express Puruk Cahu — Lebih Cepat, Lebih Dekat Untuk Anda">
+    <meta property="og:description" content="Layanan pengiriman paket, penjemputan GRATIS, cek & lacak paket. Hubungi WA 0818789553">
+    <meta property="og:image" content="https://puruk-cahu.vercel.app/foto-spx.webp">
+    <meta property="og:url" content="https://puruk-cahu.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    
+    <style>
+        :root {
+            --spx-orange: #FF6A00;
+            --spx-orange-dark: #E65C00;
+            --spx-dark: #222222;
+            --spx-light: #FFF7F0;
+            --spx-gray: #F5F5F5;
+            --text-dark: #1F2937;
+            --text-light: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #FFFFFF;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        /* === HEADER & HERO === */
+        header.hero {
+            background: linear-gradient(135deg, var(--spx-orange) 0%, var(--spx-orange-dark) 100%);
+            color: var(--text-light);
+            padding: 2.5rem 0 3.5rem;
+            text-align: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 2rem auto;
+            display: block;
+            box-shadow: var(--shadow);
+            /* ✅ Perbaikan LCP — prioritas tinggi & ukuran tepat */
+            fetchpriority: high;
+            loading: eager;
+            decoding: async;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p.tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #25D366;
+            color: white !important;
+            font-weight: 700;
+            font-size: 1.15rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 10px rgba(37,211,102,0.35);
+        }
+
+        .wa-btn:hover, .wa-btn:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37,211,102,0.4);
+            outline: 3px solid rgba(255,255,255,0.6);
+        }
+
+        /* === SECTION UMUM === */
+        section {
+            padding: 3.5rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--spx-light);
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            text-align: center;
+            color: var(--spx-orange);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--spx-orange);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--spx-dark);
+        }
+
+        /* === LAYANAN — KARTU === */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--spx-orange);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* === INFO & LOKASI === */
+        .info-block {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .info-block p {
+            margin: 0.8rem 0;
+            font-size: 1.08rem;
+        }
+
+        .info-block strong {
+            color: var(--spx-orange);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hour-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .hour-card h3 {
+            color: var(--spx-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .closed {
+            color: #DC2626;
+            font-weight: 700;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--spx-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .hero p.tagline { font-size: 1rem; }
+            section { padding: 2rem 0; }
+            .wa-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ HEADER / HERO — Gambar LCP di HTML langsung, ukuran tepat -->
+<header class="hero">
+    <div class="container">
+        <h1>SPX Express Puruk Cahu</h1>
+        <p class="tagline">Lebih Cepat • Lebih Dekat • Untuk Anda</p>
+
+        <img 
+            src="foto-spx.webp" 
+            alt="SPX Express Puruk Cahu — Gedung Pusat Layanan, Pengiriman Paket & Logistik" 
+            width="900" height="675"
+            class="hero-img"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async">
+
+        <a href="https://wa.me/62818789553" target="_blank" rel="noopener noreferrer" class="wa-btn">
+            📞 HUBUNGI WA — 0818789553
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- ✅ LAYANAN KAMI — Struktur Heading Benar h2 > h3 -->
+    <section id="layanan">
+        <div class="container">
+            <h2>📦 Layanan Kami</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>🚚 Pengiriman Paket</h3>
+                    <p>Pengiriman ke seluruh Indonesia & luar negeri, aman, cepat, dan terpercaya dengan jaringan SPX Express.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📥 Pengambilan Paket</h3>
+                    <p>Jemput paket ke lokasi Anda di sekitar Puruk Cahu — <strong>GRATIS!</strong> Tidak perlu ke kantor kami.</p>
+                </div>
+
+                <div class="card">
+                    <h3>✅ Cek & Lacak</h3>
+                    <p>Cek status paket kapan saja secara akurat dan cepat melalui sistem pelacakan resmi SPX Express.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ LOKASI KAMI -->
+    <section id="lokasi">
+        <div class="container">
+            <h2>📍 Lokasi Kami</h2>
+            <div class="info-block">
+                <p><strong>Alamat Lengkap:</strong><br>
+                Puruk Cahu, Kabupaten Murung Raya, Kalimantan Tengah</p>
+
+                <p><strong>📞 WhatsApp:</strong><br>
+                <a href="https://wa.me/62818789553" target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 700;">0818789553</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ JAM OPERASIONAL -->
+    <section id="jam-operasional">
+        <div class="container">
+            <h2>🕐 Jam Operasional</h2>
+            <div class="hours-grid">
+                <div class="hour-card">
+                    <h3>Senin – Jumat</h3>
+                    <p style="font-size: 1.2rem; font-weight: bold; color: var(--spx-orange);">08.00 – 17.00</p>
+                </div>
+
+                <div class="hour-card">
+                    <h3>Sabtu</h3>
+                    <p style="font-size: 1.2rem; font-weight: bold; color: var(--spx-orange);">08.00 – 15.00</p>
+                </div>
+
+                <div class="hour-card">
+                    <h3>Minggu & Hari Libur</h3>
+                    <p class="closed">TUTUP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ✅ FOOTER -->
+<footer>
+    <div class="container">
+        <p><strong>SPX Express Puruk Cahu</strong> — Melayani dengan Sepenuh Hati</p>
+        <p>Alamat: Puruk Cahu, Kalimantan Tengah | WA: 0818789553</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.6;">© 2026 SPX Express Puruk Cahu. Semua Hak Dilindungi.</p>
+    </div>
+</footer>
+
+</body>
+</html>
